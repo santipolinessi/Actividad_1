@@ -1,17 +1,22 @@
 import random
 
-words = [
-  "python",
-  "programa",
-  "variable",
-  "funcion",
-  "bucle",
-  "cadena",
-  "entero",
-  "lista",
-]
+categorias = {
+  "programacion": ["python", "variable", "funcion", "bucle"],
+  "objetos": ["mesa", "silla", "puerta", "ventana"],
+  "animales": ["perro", "gato", "elefante", "tigre"]
+}
 
-word = random.choice(words)
+print("categorias disponibles: ")
+for c in categorias: 
+    print("-",c)
+
+categoria = input("elija una categoría: ")
+
+while categoria not in categorias:
+  print("Categoría no válida")
+  categoria = input("elija una categoría: ")
+
+word = random.choice(categorias[categoria])
 guessed = []
 attempts = 6
 score = 0
